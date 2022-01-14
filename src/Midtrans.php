@@ -14,9 +14,3 @@ class Midtrans
         return new \Midtrans\CoreApi();
     }
 }
-Midtrans::snap()->createTransaction([
-    // transaction details
-]);
-Midtrans::coreApi()->charge([
-    // transaction details
-]);
