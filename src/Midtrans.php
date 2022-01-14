@@ -16,17 +16,17 @@ class Midtrans
 
     public static function notification()
     {
-        return new \Midtrans\Notification;
+        return new \Midtrans\Notification();
     }
 
     public static function transaction()
     {
-        return new \Midtrans\Transaction;
+        return new \Midtrans\Transaction();
     }
 
     public static function sanitizer()
     {
-        return new \Midtrans\Sanitizer;
+        return new \Midtrans\Sanitizer();
     }
 
     public static function snapScripts()
