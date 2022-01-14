@@ -1,4 +1,4 @@
-# Laravel Midtrans - Wrapper for Midtrans package
+# 🚀 Laravel Midtrans - Wrapper for Midtrans package
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/sawirricardo/laravel-midtrans.svg?style=flat-square)](https://packagist.org/packages/sawirricardo/laravel-midtrans)
 [![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/sawirricardo/laravel-midtrans/run-tests?label=tests)](https://github.com/sawirricardo/laravel-midtrans/actions?query=workflow%3Arun-tests+branch%3Amain)
