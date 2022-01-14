@@ -3,7 +3,6 @@
 namespace Sawirricardo\Midtrans;
 
 use Illuminate\Support\Facades\Blade;
-use Sawirricardo\Midtrans\Commands\MidtransCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
