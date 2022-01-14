@@ -2,9 +2,9 @@
 
 namespace Sawirricardo\Midtrans;
 
+use Sawirricardo\Midtrans\Commands\MidtransCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Sawirricardo\Midtrans\Commands\MidtransCommand;
 
 class MidtransServiceProvider extends PackageServiceProvider
 {

@@ -6,12 +6,12 @@ class Midtrans
 {
     public static function snap()
     {
-        return new \Midtrans\Snap;
+        return new \Midtrans\Snap();
     }
 
     public static function coreApi()
     {
-        return new \Midtrans\CoreApi;
+        return new \Midtrans\CoreApi();
     }
 }
 Midtrans::snap()->createTransaction([
