@@ -1,10 +1,11 @@
 {
     "name": "sawirricardo/laravel-midtrans",
-    "description": "Wrapper for midtrans package",
+    "description": "Laravel Midtrans - Wrapper for Midtrans package",
     "keywords": [
         "sawirricardo",
         "laravel",
-        "laravel-midtrans"
+        "laravel-midtrans",
+        "midtrans"
     ],
     "homepage": "https://github.com/sawirricardo/laravel-midtrans",
     "license": "MIT",
