@@ -71,6 +71,14 @@ php artisan vendor:publish --tag="laravel-midtrans-views"
 \Sawirricardo\Midtrans::coreApi()->charge([
     // transaction details
 ]);
+
+//checkout.blade.php
+// if you use Snap, you can include Midtrans snap script
+@midtransSnapScript
+
+// if you use Core API, you will most likely need to include this.
+@midtransCardScript
+
 ```
 
 For more information of how to use Midtrans, please refer to [Midtrans documentation](https://github.com/Midtrans/midtrans-php)
