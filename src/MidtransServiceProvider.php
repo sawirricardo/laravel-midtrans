@@ -27,10 +27,18 @@ class MidtransServiceProvider extends PackageServiceProvider
         \Midtrans\Config::$clientKey = config('midtrans.client_key');
         \Midtrans\Config::$isSanitized = config('midtrans.is_sanitized');
         \Midtrans\Config::$is3ds = config('midtrans.is_3ds');
-        \Midtrans\Config::$appendNotifUrl = config('midtrans.append_notif_url');
-        \Midtrans\Config::$overrideNotifUrl = config('midtrans.overrideNotifUrl');
-        \Midtrans\Config::$paymentIdempotencyKey = config('midtrans.payment_idempotency_key');
-        \Midtrans\Config::$curlOptions = config('midtrans.curl_options');
+        if (!is_null(config('midtrans.append_notif_url'))) {
+            \Midtrans\Config::$isProduction = config('midtrans.append_notif_url');
+        }
+        if (!is_null(config('midtrans.overrideNotifUrl'))) {
+            \Midtrans\Config::$overrideNotifUrl = config('midtrans.overrideNotifUrl');
+        }
+        if (!is_null(config('midtrans.payment_idempotency_key'))) {
+            \Midtrans\Config::$paymentIdempotencyKey = config('midtrans.payment_idempotency_key');
+        }
+        if (!is_null(config('midtrans.curl_options'))) {
+            \Midtrans\Config::$curlOptions = config('midtrans.curl_options');
+        }
 
         Blade::directive('midtransSnapScripts', function ($expression) {
             return "{!! \Sawirricardo\Midtrans::snapScripts($expression) !!}";
