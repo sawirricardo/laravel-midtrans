@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Sawirricardo\Midtrans\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class MidtransCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-midtrans';
 
     public $description = 'My command';
 
