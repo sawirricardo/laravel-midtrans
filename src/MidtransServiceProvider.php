@@ -32,16 +32,16 @@ class MidtransServiceProvider extends PackageServiceProvider
         }
         \Midtrans\Config::$isSanitized = config('midtrans.is_sanitized', true);
         \Midtrans\Config::$is3ds = config('midtrans.is_3ds', true);
-        if (!is_null(config('midtrans.append_notif_url'))) {
+        if (! is_null(config('midtrans.append_notif_url'))) {
             \Midtrans\Config::$isProduction = config('midtrans.append_notif_url');
         }
-        if (!is_null(config('midtrans.overrideNotifUrl'))) {
+        if (! is_null(config('midtrans.overrideNotifUrl'))) {
             \Midtrans\Config::$overrideNotifUrl = config('midtrans.overrideNotifUrl');
         }
-        if (!is_null(config('midtrans.payment_idempotency_key'))) {
+        if (! is_null(config('midtrans.payment_idempotency_key'))) {
             \Midtrans\Config::$paymentIdempotencyKey = config('midtrans.payment_idempotency_key');
         }
-        if (!is_null(config('midtrans.curl_options'))) {
+        if (! is_null(config('midtrans.curl_options'))) {
             \Midtrans\Config::$curlOptions = config('midtrans.curl_options');
         }
 
