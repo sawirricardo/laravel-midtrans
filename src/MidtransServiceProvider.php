@@ -22,11 +22,16 @@ class MidtransServiceProvider extends PackageServiceProvider
 
     public function boot()
     {
-        \Midtrans\Config::$isProduction = config('midtrans.is_production');
-        \Midtrans\Config::$serverKey = config('midtrans.server_key');
-        \Midtrans\Config::$clientKey = config('midtrans.client_key');
-        \Midtrans\Config::$isSanitized = config('midtrans.is_sanitized');
-        \Midtrans\Config::$is3ds = config('midtrans.is_3ds');
+        \Midtrans\Config::$isProduction = config('midtrans.is_production', false);
+        if (config('midtrans.is_production')) {
+            \Midtrans\Config::$serverKey = config('midtrans.server_key');
+            \Midtrans\Config::$clientKey = config('midtrans.client_key');
+        } else {
+            \Midtrans\Config::$serverKey = config('midtrans.sandbox_server_key');
+            \Midtrans\Config::$clientKey = config('midtrans.sandbox_client_key');
+        }
+        \Midtrans\Config::$isSanitized = config('midtrans.is_sanitized', true);
+        \Midtrans\Config::$is3ds = config('midtrans.is_3ds', true);
         if (!is_null(config('midtrans.append_notif_url'))) {
             \Midtrans\Config::$isProduction = config('midtrans.append_notif_url');
         }
