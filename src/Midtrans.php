@@ -16,7 +16,7 @@ class Midtrans
 
     public static function notification()
     {
-        return new \Midtrans\Notification();
+        return new \Midtrans\Notification;
     }
 
     public static function transaction()
