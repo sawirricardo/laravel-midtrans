@@ -20,7 +20,7 @@ class MidtransServiceProvider extends PackageServiceProvider
             ->hasConfigFile();
     }
 
-    public function register()
+    public function boot()
     {
         \Midtrans\Config::$isProduction = config('midtrans.is_production');
         \Midtrans\Config::$serverKey = config('midtrans.server_key');
@@ -31,10 +31,7 @@ class MidtransServiceProvider extends PackageServiceProvider
         \Midtrans\Config::$overrideNotifUrl = config('midtrans.overrideNotifUrl');
         \Midtrans\Config::$paymentIdempotencyKey = config('midtrans.payment_idempotency_key');
         \Midtrans\Config::$curlOptions = config('midtrans.curl_options');
-    }
 
-    public function boot()
-    {
         Blade::directive('midtransSnapScripts', function ($expression) {
             return "{!! \Sawirricardo\Midtrans::snapScripts($expression) !!}";
         });
