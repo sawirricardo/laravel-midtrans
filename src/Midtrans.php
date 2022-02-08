@@ -14,9 +14,9 @@ class Midtrans
         return new \Midtrans\CoreApi();
     }
 
-    public static function notification()
+    public static function notification($inputSource = 'php://input')
     {
-        return new \Midtrans\Notification();
+        return new \Midtrans\Notification($inputSource);
     }
 
     public static function transaction()
@@ -27,6 +27,20 @@ class Midtrans
     public static function sanitizer()
     {
         return new \Midtrans\Sanitizer();
+    }
+
+    public static function getSignatureKey($orderId, $statusCode, $grossAmount)
+    {
+        return hash('sha512', join('', [$orderId, $statusCode, $grossAmount, \Midtrans\Config::$serverKey]));
+    }
+
+    public static function verifyNotification(\Midtrans\Notification|array $notification)
+    {
+        if ($notification instanceof \Midtrans\Notification) {
+            return hash_equals($notification->signature_key, self::getSignatureKey($notification->order_id, $notification->transaction_status, $notification->gross_amount));
+        }
+
+        return hash_equals($notification['signature_key'], self::getSignatureKey($notification['order_id'], $notification['status_code'], $notification['gross_amount'],));
     }
 
     public static function snapScripts()
