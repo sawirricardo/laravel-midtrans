@@ -40,7 +40,7 @@ class Midtrans
             return hash_equals($notification->signature_key, self::getSignatureKey($notification->order_id, $notification->transaction_status, $notification->gross_amount));
         }
 
-        return hash_equals($notification['signature_key'], self::getSignatureKey($notification['order_id'], $notification['status_code'], $notification['gross_amount'],));
+        return hash_equals($notification['signature_key'], self::getSignatureKey($notification['order_id'], $notification['status_code'], $notification['gross_amount'], ));
     }
 
     public static function snapScripts()
