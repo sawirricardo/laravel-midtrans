@@ -2,9 +2,9 @@
 
 All notable changes to `laravel-midtrans` will be documented in this file.
 
-## 1.0.2 - 2022-02-09
+## v1.1.3 - 2022-02-09
 
--   Added Laravel 9 support
+Added Laravel 9 support
 
 ## v.1.1.2 - 2022-02-09
 
