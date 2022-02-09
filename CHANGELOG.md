@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-midtrans` will be documented in this file.
 
+## v.1.1.2 - 2022-02-09
+
+update composer json
+
 ## 1.1.1 - 2022-02-08
 
 fixed composer.json
