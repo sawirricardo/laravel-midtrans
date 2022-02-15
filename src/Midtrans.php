@@ -4,12 +4,12 @@ namespace Sawirricardo\Midtrans;
 
 class Midtrans
 {
-    const SANDBOX_BASE_URL = 'https://api.sandbox.midtrans.com';
-    const PRODUCTION_BASE_URL = 'https://api.midtrans.com';
-    const SNAP_SANDBOX_BASE_URL = 'https://app.sandbox.midtrans.com/snap/v1';
-    const SNAP_PRODUCTION_BASE_URL = 'https://app.midtrans.com/snap/v1';
-    const SNAP_JS_SANDBOX_URL = 'https://app.sandbox.midtrans.com/snap/snap.js';
-    const SNAP_JS_PRODUCTION_URL = 'https://app.midtrans.com/snap/snap.js';
+    public const SANDBOX_BASE_URL = 'https://api.sandbox.midtrans.com';
+    public const PRODUCTION_BASE_URL = 'https://api.midtrans.com';
+    public const SNAP_SANDBOX_BASE_URL = 'https://app.sandbox.midtrans.com/snap/v1';
+    public const SNAP_PRODUCTION_BASE_URL = 'https://app.midtrans.com/snap/v1';
+    public const SNAP_JS_SANDBOX_URL = 'https://app.sandbox.midtrans.com/snap/snap.js';
+    public const SNAP_JS_PRODUCTION_URL = 'https://app.midtrans.com/snap/snap.js';
 
     public function __construct()
     {
@@ -23,16 +23,16 @@ class Midtrans
         }
         \Midtrans\Config::$isSanitized = config('midtrans.is_sanitized', true);
         \Midtrans\Config::$is3ds = config('midtrans.is_3ds', true);
-        if (!is_null(config('midtrans.append_notif_url'))) {
+        if (! is_null(config('midtrans.append_notif_url'))) {
             \Midtrans\Config::$isProduction = config('midtrans.append_notif_url');
         }
-        if (!is_null(config('midtrans.overrideNotifUrl'))) {
+        if (! is_null(config('midtrans.overrideNotifUrl'))) {
             \Midtrans\Config::$overrideNotifUrl = config('midtrans.overrideNotifUrl');
         }
-        if (!is_null(config('midtrans.payment_idempotency_key'))) {
+        if (! is_null(config('midtrans.payment_idempotency_key'))) {
             \Midtrans\Config::$paymentIdempotencyKey = config('midtrans.payment_idempotency_key');
         }
-        if (!is_null(config('midtrans.curl_options'))) {
+        if (! is_null(config('midtrans.curl_options'))) {
             \Midtrans\Config::$curlOptions = config('midtrans.curl_options');
         }
     }
@@ -55,6 +55,7 @@ class Midtrans
     public function transaction()
     {
         new static();
+
         return new \Midtrans\Transaction();
     }
 
@@ -71,6 +72,7 @@ class Midtrans
     protected function getSignatureKey($orderId, $statusCode, $grossAmount)
     {
         $serverKey = config('midtrans.is_production') ? config('midtrans.server_key') : config('midtrans.sandbox_server_key');
+
         return openssl_digest(join('', [$orderId, $statusCode, $grossAmount, $serverKey]), 'sha512');
     }
 

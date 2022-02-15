@@ -29,30 +29,34 @@ class CustomerDetail
 
     public static function make()
     {
-        return new static;
+        return new static();
     }
 
     public function setEmail($email)
     {
         $this->email = $email;
+
         return $this;
     }
 
     public function setFirstName($name)
     {
         $this->firstName = $name;
+
         return $this;
     }
 
     public function setLastName($name)
     {
         $this->lastName = $name;
+
         return $this;
     }
 
     public function setPhone($phone)
     {
         $this->phone = $phone;
+
         return $this;
     }
 
@@ -64,6 +68,7 @@ class CustomerDetail
         } else {
             $this->billingAddress = new BillingAddress(...$address);
         }
+
         return $this;
     }
 
@@ -74,6 +79,7 @@ class CustomerDetail
         } else {
             $this->shippingAddress = new ShippingAddress(...$address);
         }
+
         return $this;
     }
 }

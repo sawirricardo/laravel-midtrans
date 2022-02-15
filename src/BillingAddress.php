@@ -35,54 +35,62 @@ class BillingAddress
 
     public static function make()
     {
-        return new static;
+        return new static();
     }
 
     public function setEmail($email)
     {
         $this->email = $email;
+
         return $this;
     }
 
     public function setFirstName($name)
     {
         $this->firstName = $name;
+
         return $this;
     }
 
     public function setLastName($name)
     {
         $this->lastName = $name;
+
         return $this;
     }
 
     public function setPhone($phone)
     {
         $this->phone = $phone;
+
         return $this;
     }
 
     public function setAddress($address)
     {
         $this->address = $address;
+
         return $this;
     }
 
     public function setCity($city)
     {
         $this->city = $city;
+
         return $this;
     }
 
     public function postalCode($postalCode)
     {
         $this->postalCode = $postalCode;
+
         return $this;
     }
 
     public function setCountryCode($countryCode = 'IDN')
     {
         $this->countryCode = $countryCode;
+
         return $this;
     }
 }

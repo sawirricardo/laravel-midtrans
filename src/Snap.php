@@ -31,6 +31,7 @@ class Snap
     public function setTransactionDetail(TransactionDetail $transactionDetail)
     {
         $this->transactionDetail = $transactionDetail;
+
         return $this;
     }
 
@@ -74,6 +75,7 @@ class Snap
                 'json' => $params,
             ]);
             $result = json_decode($response->getBody(), true);
+
             return new SnapTransaction($result['redirect_url'], $result['token']);
         } catch (\GuzzleHttp\Exception\ClientException $e) {
             dump($e->getCode());
@@ -86,12 +88,14 @@ class Snap
     public function setCustomerDetail(CustomerDetail $customerDetail)
     {
         $this->customerDetail = $customerDetail;
+
         return $this;
     }
 
     public function addItemDetail(ItemDetail $itemDetail)
     {
         $this->itemDetails[] = $itemDetail;
+
         return $this;
     }
 
@@ -100,6 +104,7 @@ class Snap
         if ($condition) {
             $this->addItemDetail($itemDetail);
         }
+
         return $this;
     }
 
@@ -123,6 +128,7 @@ class Snap
         } else {
             $this->callbacks['unfinish'] = $url;
         }
+
         return $this;
     }
 
@@ -133,6 +139,7 @@ class Snap
         } else {
             $this->callbacks['error'] = $url;
         }
+
         return $this;
     }
 
@@ -140,7 +147,7 @@ class Snap
      * set Expiry time for payment page
      *
      * @param string $unit unit of time, can be `minute`, `hour`, `day`
-     * @param integer $duration
+     * @param int $duration
      * @param string $startTime yyyy-MM-dd HH:mm:ss Z
      * @return void
      */

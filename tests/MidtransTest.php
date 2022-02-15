@@ -15,7 +15,7 @@ it('can switch environment based on config is_production', function () {
 });
 
 it('can generate a valid signature key', function () {
-    $result =  Midtrans::make()->verifyNotification(json_decode('{
+    $result = Midtrans::make()->verifyNotification(json_decode('{
         "transaction_time": "2020-01-09 18:27:19",
         "transaction_status": "capture",
         "transaction_id": "57d5293c-e65f-4a29-95e4-5959c3fa335b",
