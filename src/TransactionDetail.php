@@ -5,7 +5,7 @@ namespace Sawirricardo\Midtrans;
 class TransactionDetail
 {
     public $orderId;
-    public int $grossAmount;
+    public ?int $grossAmount;
 
     public function __construct($orderId = null, $grossAmount = null)
     {
