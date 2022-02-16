@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-midtrans` will be documented in this file.
 
+## v1.2.1 - 2022-02-16
+
+- Make gross amount nullable
+
 ## v1.2.0 - 2022-02-15
 
 - Refactor midtrans code to use object oriented
