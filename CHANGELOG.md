@@ -2,6 +2,11 @@
 
 All notable changes to `laravel-midtrans` will be documented in this file.
 
+## v1.3.0 - 2022-02-18
+
+- Bump to php 8.0
+- User sawirricardo/midtrans-api package
+
 ## v1.2.1 - 2022-02-16
 
 - Make gross amount nullable
