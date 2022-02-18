@@ -36,4 +36,8 @@
     <logging>
         <junit outputFile="build/report.junit.xml"/>
     </logging>
+    <php>
+        <env name="MIDTRANS_SB_CLIENT_KEY" value="SB-Mid-client-K-exoHSFyCKFLgx7" />
+        <env name="MIDTRANS_SB_SERVER_KEY" value="SB-Mid-server-0OB5QQhslyrNyX0ByYOhidcR" />
+    </php>
 </phpunit>

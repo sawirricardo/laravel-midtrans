@@ -1,5 +1,5 @@
 <?php
 
-use Sawirricardo\Midtrans\Tests\TestCase;
+use Sawirricardo\MidtransClient\Tests\TestCase;
 
 uses(TestCase::class)->in(__DIR__);

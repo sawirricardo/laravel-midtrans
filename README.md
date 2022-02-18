@@ -67,12 +67,10 @@ php artisan vendor:publish --tag="laravel-midtrans-views"
 ## Usage
 
 ```php
- \Sawirricardo\Midtrans::snap()->createTransaction([
-    // transaction details
-]);
-\Sawirricardo\Midtrans::coreApi()->charge([
-    // transaction details
-]);
+use Sawirricardo\MidtransClient\Facades\Midtrans;
+$transactionToken = Midtrans::client()->snap()->create(new TransactionDto());
+echo $transactionToken->token;
+echo $transactionToken->redirect_url;
 
 //checkout.blade.php
 // if you use Snap, you can include Midtrans snap script

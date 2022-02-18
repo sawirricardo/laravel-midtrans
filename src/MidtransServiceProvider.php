@@ -1,8 +1,9 @@
 <?php
 
-namespace Sawirricardo\Midtrans;
+namespace Sawirricardo\MidtransClient;
 
 use Illuminate\Support\Facades\Blade;
+use Sawirricardo\MidtransClient\MidtransClient;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -13,6 +14,13 @@ class MidtransServiceProvider extends PackageServiceProvider
         $package
             ->name('laravel-midtrans')
             ->hasConfigFile();
+    }
+
+    public function registeringPackage()
+    {
+        $this->app->singleton('laravel-midtrans', function ($app) {
+            return MidtransClient::makeFromConfig($app['config']->get('midtrans'));
+        });
     }
 
     public function boot()

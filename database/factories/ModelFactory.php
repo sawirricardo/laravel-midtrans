@@ -1,6 +1,6 @@
 <?php
 
-namespace Sawirricardo\Midtrans\Database\Factories;
+namespace Sawirricardo\MidtransClient\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
