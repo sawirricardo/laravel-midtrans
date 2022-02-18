@@ -19,8 +19,8 @@ class MidtransClient
     public static function makeFromConfig($config)
     {
         return new static(
-            $config['is_production'] ?  $config['server_key'] : $config['sandbox_server_key'],
-            $config['is_production'] ?  $config['client_key'] : $config['sandbox_client_key'],
+            $config['is_production'] ? $config['server_key'] : $config['sandbox_server_key'],
+            $config['is_production'] ? $config['client_key'] : $config['sandbox_client_key'],
             $config['is_production'],
             $config['is_3ds'],
             $config['is_sanitized']

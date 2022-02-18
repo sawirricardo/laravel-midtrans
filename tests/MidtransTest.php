@@ -16,7 +16,7 @@ it('can create a transaction', function () {
         'transaction_details' => [
             'order_id' => 'order-id-123',
             'gross_amount' => 10000,
-        ]
+        ],
     ]));
     expect($token->token)->not->toBeNull();
     expect($token->redirect_url)->not->toBeNull();
