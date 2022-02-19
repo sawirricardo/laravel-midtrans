@@ -1,11 +1,11 @@
 <?php
 
-namespace Sawirricardo\MidtransClient\Tests;
+namespace Sawirricardo\Midtrans\Laravel\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Foundation\Bootstrap\LoadEnvironmentVariables;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Sawirricardo\MidtransClient\MidtransServiceProvider;
+use Sawirricardo\Midtrans\Laravel\MidtransServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -19,7 +19,7 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'Sawirricardo\\MidtransClient\\Database\\Factories\\' . class_basename($modelName) . 'Factory'
+            fn (string $modelName) => 'Sawirricardo\\Midtrans\\Laravel\\Database\\Factories\\' . class_basename($modelName) . 'Factory'
         );
     }
 

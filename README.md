@@ -69,7 +69,7 @@ php artisan vendor:publish --tag="laravel-midtrans-views"
 ## Usage
 
 ```php
-use Sawirricardo\MidtransClient\Facades\Midtrans;
+use Sawirricardo\Midtrans\Laravel\Facades\Midtrans;
 $transactionToken = Midtrans::client()->snap()->create(new TransactionDto());
 echo $transactionToken->token;
 echo $transactionToken->redirect_url;

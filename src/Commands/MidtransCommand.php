@@ -1,6 +1,6 @@
 <?php
 
-namespace Sawirricardo\MidtransClient\Commands;
+namespace Sawirricardo\Midtrans\Laravel\Commands;
 
 use Illuminate\Console\Command;
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace Sawirricardo\MidtransClient;
+namespace Sawirricardo\Midtrans\Laravel;
 
-class MidtransClient
+class Midtrans
 {
     private $client;
 
@@ -27,7 +27,7 @@ class MidtransClient
         );
     }
 
-    public function client(): \Sawirricardo\Midtrans\Midtrans
+    public function new(): \Sawirricardo\Midtrans\Midtrans
     {
         return $this->client;
     }

@@ -1,5 +1,5 @@
 <?php
-// config for Sawirricardo/MidtransClient
+// config for Sawirricardo/Midtrans/Laravel
 return [
     'server_key' => env('MIDTRANS_SERVER_KEY'),
     'client_key' => env('MIDTRANS_CLIENT_KEY'),

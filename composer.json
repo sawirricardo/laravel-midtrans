@@ -38,13 +38,16 @@
     },
     "autoload": {
         "psr-4": {
-            "Sawirricardo\\MidtransClient\\": "src",
-            "Sawirricardo\\MidtransClient\\Database\\Factories\\": "database/factories"
-        }
+            "Sawirricardo\\Midtrans\\Laravel\\": "src",
+            "Sawirricardo\\Midtrans\\Laravel\\Database\\Factories\\": "database/factories"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
-            "Sawirricardo\\MidtransClient\\Tests\\": "tests"
+            "Sawirricardo\\Midtrans\\Laravel\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -62,10 +65,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Sawirricardo\\MidtransClient\\MidtransServiceProvider"
+                "Sawirricardo\\Midtrans\\Laravel\\MidtransServiceProvider"
             ],
             "aliases": {
-                "Midtrans": "Sawirricardo\\MidtransClient\\Facades\\Midtrans"
+                "Midtrans": "Sawirricardo\\Midtrans\\Laravel\\Facades\\Midtrans"
             }
         }
     },
