@@ -12,6 +12,8 @@ In need of using Midtrans in your Laravel app? Use this package.
 We invest a lot of resources into creating [best in class open source packages](https://github.com/sawirricardo). You can support by donating to
 
 -   [Paypal](https://paypal.me/sawirricardo)
+-   Wallet 0x3F20d326E5DA8ab6D27d9b2DdD350baB1e589d87
+-   BCA 8330123584
 
 I appreciate you if you connect with me on [Twitter](https://twitter.com/RicardoSawir)
 
