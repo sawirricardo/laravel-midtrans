@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-midtrans` will be documented in this file.
 
+## v.1.3.2 - 2022-02-19
+
+- removed midtrans-php dependencies
+
 ## v1.3.1 - 2022-02-19
 
 - changed namespace to use Sawirricardo\Midtrans\Laravel\Midtrans
