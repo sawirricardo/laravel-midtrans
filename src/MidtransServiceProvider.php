@@ -5,7 +5,6 @@ namespace Sawirricardo\Midtrans\Laravel;
 use Illuminate\Support\Facades\Blade;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Sawirricardo\Midtrans\Laravel\Midtrans;
 
 class MidtransServiceProvider extends PackageServiceProvider
 {
