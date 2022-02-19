@@ -2,6 +2,12 @@
 
 All notable changes to `laravel-midtrans` will be documented in this file.
 
+## v1.3.3 - 2022-02-19
+
+- update composer package
+
+**Full Changelog**: https://github.com/sawirricardo/laravel-midtrans/compare/1.3.2...1.3.3
+
 ## v.1.3.2 - 2022-02-19
 
 - removed midtrans-php dependencies
