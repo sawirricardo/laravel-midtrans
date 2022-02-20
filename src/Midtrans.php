@@ -2,18 +2,29 @@
 
 namespace Sawirricardo\Midtrans\Laravel;
 
+use Illuminate\Support\Facades\Http;
+use Sawirricardo\Midtrans\Laravel\Snap;
+
 class Midtrans
 {
-    private $client;
+    private string $serverKey;
+    private string $clientKey;
+    private bool $isProduction;
+    private bool $is3ds;
+    private bool $isSanitized;
 
     public function __construct(
-        $serverKey,
-        $clientKey,
-        $isProduction = false,
-        $is3ds = false,
-        $isSanitized = false
+        string $serverKey,
+        string $clientKey,
+        bool $isProduction = false,
+        bool  $is3ds = false,
+        bool  $isSanitized = false
     ) {
-        $this->client = new \Sawirricardo\Midtrans\Midtrans($serverKey, $clientKey, $isProduction, $is3ds, $isSanitized);
+        $this->serverKey = $serverKey;
+        $this->clientKey = $clientKey;
+        $this->isProduction = $isProduction;
+        $this->is3ds = $is3ds;
+        $this->isSanitized = $isSanitized;
     }
 
     public static function makeFromConfig($config)
@@ -27,9 +38,34 @@ class Midtrans
         );
     }
 
-    public function new(): \Sawirricardo\Midtrans\Midtrans
+    public function new()
     {
-        return $this->client;
+        return $this;
+    }
+
+    public function snap()
+    {
+        return new Snap($this->createHttpFactory(
+            $this->isProduction
+                ? 'https://app.midtrans.com/snap/v1'
+                : 'https://app.sandbox.midtrans.com/snap/v1'
+        ));
+    }
+
+    public function payment()
+    {
+        return new Payment($this->createHttpFactory(
+            $this->isProduction
+                ? 'https://api.midtrans.com'
+                : 'https://api.sandbox.midtrans.com'
+        ));
+    }
+
+    private function createHttpFactory(string $baseUrl)
+    {
+        return Http::acceptJson()->asJson()
+            ->withToken(base64_encode($this->serverKey . ':'), 'Basic')
+            ->baseUrl($baseUrl);
     }
 
     public static function snapScripts(): string

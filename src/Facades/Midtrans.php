@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Facade;
 
 /**
  * @see \Sawirricardo\Midtrans\Midtrans
- * @method static \Sawirricardo\Midtrans\Midtrans new()
+ * @method static \Sawirricardo\Midtrans\Laravel\Midtrans new()
  */
 class Midtrans extends Facade
 {
