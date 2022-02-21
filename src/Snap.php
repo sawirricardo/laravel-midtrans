@@ -3,7 +3,6 @@
 namespace Sawirricardo\Midtrans\Laravel;
 
 use Illuminate\Http\Client\PendingRequest;
-use Illuminate\Support\Facades\Http;
 use Sawirricardo\Midtrans\Dto\SnapTokenDto;
 use Sawirricardo\Midtrans\Dto\TransactionDto;
 

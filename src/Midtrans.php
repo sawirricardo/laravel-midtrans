@@ -3,7 +3,6 @@
 namespace Sawirricardo\Midtrans\Laravel;
 
 use Illuminate\Support\Facades\Http;
-use Sawirricardo\Midtrans\Laravel\Snap;
 
 class Midtrans
 {

@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-midtrans` will be documented in this file.
 
+## v1.4.0 - 2022-02-20
+
+- Use Laravel's Http
+
 ## v1.3.3 - 2022-02-19
 
 - update composer package

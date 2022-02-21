@@ -25,6 +25,7 @@ class Notification
         if (is_array($transactionStatus)) {
             return new static(new TransactionStatus($transactionStatus));
         }
+
         return new static($transactionStatus);
     }
 
@@ -35,6 +36,7 @@ class Notification
     public function whenCreditCardChallenged(callable $callback): static
     {
         $this->callbackCreditCardChallenged = $callback;
+
         return $this;
     }
 
@@ -45,6 +47,7 @@ class Notification
     public function whenCreditCardSuccess(callable $callback): static
     {
         $this->callbackCreditCardSuccess = $callback;
+
         return $this;
     }
 
@@ -55,6 +58,7 @@ class Notification
     public function whenSettlement(callable $callback): static
     {
         $this->callbackSettlement = $callback;
+
         return $this;
     }
 
@@ -65,6 +69,7 @@ class Notification
     public function whenPending(callable $callback): static
     {
         $this->callbackPending = $callback;
+
         return $this;
     }
 
@@ -75,6 +80,7 @@ class Notification
     public function whenDenied(callable $callback): static
     {
         $this->callbackDenied = $callback;
+
         return $this;
     }
 
@@ -85,6 +91,7 @@ class Notification
     public function whenExpired(callable $callback): static
     {
         $this->callbackExpired = $callback;
+
         return $this;
     }
 
@@ -95,6 +102,7 @@ class Notification
     public function whenCancelled(callable $callback): static
     {
         $this->callbackCancelled = $callback;
+
         return $this;
     }
 
