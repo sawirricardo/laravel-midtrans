@@ -7,15 +7,15 @@ use Sawirricardo\Midtrans\Laravel\Snap;
 
 class Midtrans
 {
-    private string $serverKey;
-    private string $clientKey;
+    private ?string $serverKey = null;
+    private ?string $clientKey = null;
     private bool $isProduction;
     private bool $is3ds;
     private bool $isSanitized;
 
     public function __construct(
-        string $serverKey,
-        string $clientKey,
+        ?string $serverKey = null,
+        ?string $clientKey = null,
         bool $isProduction = false,
         bool  $is3ds = false,
         bool  $isSanitized = false
@@ -40,6 +40,10 @@ class Midtrans
 
     public function new()
     {
+        if (is_null($this->serverKey) || is_null($this->clientKey)) {
+            throw new \Exception('Server key or Client key is not set');
+        }
+
         return $this;
     }
 
