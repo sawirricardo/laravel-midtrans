@@ -27,7 +27,6 @@ class Midtrans extends BaseMidtrans
         return $this;
     }
 
-
     public static function snapScripts(): string
     {
         if (config('midtrans.is_production', false)) {
