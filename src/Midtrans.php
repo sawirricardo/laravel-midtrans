@@ -2,30 +2,11 @@
 
 namespace Sawirricardo\Midtrans\Laravel;
 
-use Illuminate\Support\Facades\Http;
+use Exception;
+use Sawirricardo\Midtrans\Midtrans as BaseMidtrans;
 
-class Midtrans
+class Midtrans extends BaseMidtrans
 {
-    private ?string $serverKey = null;
-    private ?string $clientKey = null;
-    private bool $isProduction;
-    private bool $is3ds;
-    private bool $isSanitized;
-
-    public function __construct(
-        ?string $serverKey = null,
-        ?string $clientKey = null,
-        bool $isProduction = false,
-        bool  $is3ds = false,
-        bool  $isSanitized = false
-    ) {
-        $this->serverKey = $serverKey;
-        $this->clientKey = $clientKey;
-        $this->isProduction = $isProduction;
-        $this->is3ds = $is3ds;
-        $this->isSanitized = $isSanitized;
-    }
-
     public static function makeFromConfig($config)
     {
         return new static(
@@ -40,44 +21,20 @@ class Midtrans
     public function new()
     {
         if (is_null($this->serverKey) || is_null($this->clientKey)) {
-            throw new \Exception('Server key or Client key is not set');
+            throw new Exception('Server key or Client key is not set');
         }
 
         return $this;
     }
 
-    public function snap()
-    {
-        return new Snap($this->createHttpFactory(
-            $this->isProduction
-                ? 'https://app.midtrans.com/snap/v1'
-                : 'https://app.sandbox.midtrans.com/snap/v1'
-        ));
-    }
-
-    public function payment()
-    {
-        return new Payment($this->createHttpFactory(
-            $this->isProduction
-                ? 'https://api.midtrans.com'
-                : 'https://api.sandbox.midtrans.com'
-        ));
-    }
-
-    private function createHttpFactory(string $baseUrl)
-    {
-        return Http::acceptJson()->asJson()
-            ->withToken(base64_encode($this->serverKey . ':'), 'Basic')
-            ->baseUrl($baseUrl);
-    }
 
     public static function snapScripts(): string
     {
         if (config('midtrans.is_production', false)) {
-            return '<script src="' . \Sawirricardo\Midtrans\Midtrans::SNAP_JS_PRODUCTION_URL . '" data-client-key="' . config('midtrans.client_key') . '"></script>';
+            return '<script src="' . BaseMidtrans::SNAP_JS_PRODUCTION_URL . '" data-client-key="' . config('midtrans.client_key') . '"></script>';
         }
 
-        return '<script src="' . \Sawirricardo\Midtrans\Midtrans::SNAP_JS_SANDBOX_URL . '" data-client-key="' . config('midtrans.sandbox_client_key') . '"></script>';
+        return '<script src="' . BaseMidtrans::SNAP_JS_SANDBOX_URL . '" data-client-key="' . config('midtrans.sandbox_client_key') . '"></script>';
     }
 
     public static function cardScripts($scriptId = "midtrans-script"): string
