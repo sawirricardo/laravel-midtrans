@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-midtrans` will be documented in this file.
 
+## v1.5.0 - 2022-04-19
+
+Use `midtrans-api` package
+
 ## v1.4.1 - 2022-02-21
 
 - Added nullable field
