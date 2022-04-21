@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-midtrans` will be documented in this file.
 
+## v1.5.1 - 2022-04-21
+
+hotfix midtrans api
+
 ## v1.5.0 - 2022-04-19
 
 Use `midtrans-api` package
