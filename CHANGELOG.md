@@ -2,6 +2,10 @@
 
 All notable changes to `laravel-midtrans` will be documented in this file.
 
+## 1.5.3 - 2023-01-21
+
+bugfix for issue #10
+
 ## 1.5.2 - 2022-12-08
 
 bugfix make credit card nullable
