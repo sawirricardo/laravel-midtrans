@@ -24,6 +24,8 @@ class MidtransServiceProvider extends PackageServiceProvider
 
     public function boot()
     {
+        parent::boot();
+
         Blade::directive('midtransSnapScripts', function ($expression) {
             return "{!! \Sawirricardo\Midtrans\Laravel\Midtrans::snapScripts({$expression}) !!}";
         });
